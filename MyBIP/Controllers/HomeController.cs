@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using MyBIP.Components.HtmlTemplate.Extra;
 using MyBIP.Components.StoreProcedure;
 using MyBIP.Components.StoreProcedure.Extra;
 using MyBIP.Models;
@@ -14,10 +16,12 @@ namespace MyBIP.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IWebHostEnvironment _env;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IWebHostEnvironment env)
         {
             _logger = logger;
+            _env = env;
         }
 
         public IActionResult Index()
@@ -27,11 +31,15 @@ namespace MyBIP.Controllers
 
         public IActionResult Privacy()
         {
+            //Read Template And Send Message
+            UseTemplateAndSendMail useTemplateAndSendMail = new UseTemplateAndSendMail(_env);
+            useTemplateAndSendMail.SendCreateUserTemplateEmail();
             return View();
         }
 
         public IActionResult GetProcedure()
         {
+            //StoreProcedure Getting And Read Data
             long total;
             UserListSearchRequest userListSearchRequest = new UserListSearchRequest();
             userListSearchRequest.BrandId = 1;

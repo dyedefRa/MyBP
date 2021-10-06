@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style type="text/css">
+        body {
+            font-family: Calibri;
+            font-size: 11pt;
+        }
+    </style>
+</head>
+<body>
+    Merhaba,<br /><br /><br />
+    '@userFullName (<a href="mailto:@userEmail">@userEmail</a>)' tarafından size Bayi İletişim Platformu Destek Hattından mesaj gönderildi.<br /><br />
+    <b><u>Mesaj içeriği</u></b><br />
+    <table cellspacing="0" cellpadding="0" border="0">
+        <tr>
+            <td style="width: 150px;"><b>Marka</b></td>
+            <td> : </td>
+            <td>@brand</td>
+        </tr>
+        <tr>
+            <td><b>Bayi/Rut Kodu</b></td>
+            <td> : </td>
+            <td>(@dealerCode) @dealerName</td>
+        </tr>
+        <tr>
+            <td><b>İl/İlçe</b></td>
+            <td> : </td>
+            <td>@city / @town</td>
+        </tr>
+        <tr>
+            <td><b>Tarih</b></td>
+            <td> : </td>
+            <td>@dateTime</td>
+        </tr>
+        <tr>
+            <td><b>Mesaj Başlığı</b></td>
+            <td> : </td>
+            <td>@subject</td>
+        </tr>
+        <tr>
+            <td><b>Mesaj</b></td>
+            <td> : </td>
+            <td>@message</td>
+        </tr>
+    </table>
+    <br />
+    @content
+</body>
+</html>

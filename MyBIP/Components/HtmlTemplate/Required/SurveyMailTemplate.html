@@ -1,0 +1,91 @@
+﻿<style type="text/css">
+    body {
+        font-size: 11pt;
+        font-family: Calibri;
+        color: #666666;
+    }
+
+    a {
+        color: #666666;
+        font-weight: bold;
+    }
+</style>
+
+<table style="width: 600px;" cellpadding="0" cellspacing="0">
+    <tr>
+        <td colspan="3" style="background-color: @BackgroundColor; height: 30px"></td>
+    </tr>
+    <tr>
+        <td style="background-color: @BackgroundColor; width: 30px"></td>
+        <td style="background-color: white">
+            <table>
+                <tr>
+                    <td colspan="4" style="text-align: right; padding-top: 5px; padding-right: 6px">
+                        <img src="@Logo">
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 20px"></td>
+                    <td colspan="3">
+                        '@SurveyName' anketi tamamlanmış bulunmaktadır. Anket raporlarını görebilmek için lütfen
+                        <a href="@ReportURL" target="_blank">tıklayınız</a>...
+                        <br /><br />
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td valign="top" style="color:#666666">
+                        <strong>Marka</strong>
+                    </td>
+                    <td valign="top">
+                        <strong>:</strong>
+                    </td>
+                    <td valign="top">
+                        @BrandName
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td valign="top">
+                        <strong>Anket Adı</strong>
+                    </td>
+                    <td valign="top">
+                        <strong>:</strong>
+                    </td>
+                    <td valign="top">
+                        @SurveyName
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td valign="top">
+                        <strong>Yayınlanma Tarihi</strong>
+                    </td>
+                    <td valign="top">
+                        <strong>:</strong>
+                    </td>
+                    <td valign="top">
+                        @SurveyStartAndEndDate
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td valign="top">
+                        <strong>Açıklama</strong>
+                    </td>
+                    <td valign="top">
+                        <strong>:</strong>
+                    </td>
+                    <td style="line-height: 20px" valign="top">
+                        @SurveyDescripiton<br /><br />
+                    </td>
+                </tr>
+            </table>
+            <br />
+        </td>
+        <td style="background-color: @BackgroundColor; width: 30px"></td>
+    </tr>
+    <tr>
+        <td colspan="3" style="background-color: @BackgroundColor; height: 30px"></td>
+    </tr>
+</table>
