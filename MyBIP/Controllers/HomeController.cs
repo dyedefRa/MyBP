@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using MyBIP.Components.StoreProcedure;
+using MyBIP.Components.StoreProcedure.Extra;
 using MyBIP.Models;
 using System;
 using System.Collections.Generic;
@@ -27,6 +29,18 @@ namespace MyBIP.Controllers
         {
             return View();
         }
+
+        public IActionResult GetProcedure()
+        {
+            long total;
+            UserListSearchRequest userListSearchRequest = new UserListSearchRequest();
+            userListSearchRequest.BrandId = 1;
+            userListSearchRequest.PageNumber = 1;
+            userListSearchRequest.PageSize = 20;
+            var result = UserBusinessLogic.ListSearch(userListSearchRequest,out total).ResultValue;
+            return View();
+        }
+        
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
