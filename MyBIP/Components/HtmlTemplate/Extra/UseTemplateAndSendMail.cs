@@ -28,8 +28,6 @@ namespace MyBIP.Components.HtmlTemplate.Extra
                             .Select(email => new MailAddress(email))
                                 .ToArray();
                               
-
-
             return SendEmail("from", "displayname", "subject", message, null, null, null, toMailAddresses);
         }
 
